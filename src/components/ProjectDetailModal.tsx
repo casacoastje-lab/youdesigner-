@@ -97,7 +97,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             {/* Main Media Stage: Actual Local Project Video with preload="metadata" */}
             <div className="rounded-2xl overflow-hidden bg-black border border-[#27272a] shadow-xl relative group">
               {project.videoUrl ? (
-                project.videoUrl.includes('youtube.com') || project.videoUrl.includes('youtu.be') ? (
+                project.videoUrl.includes('youtube.com') || project.videoUrl.includes('youtu.be') || project.videoUrl.includes('instagram.com') ? (
                   <div className="relative aspect-video bg-black flex items-center justify-center">
                     <iframe
                       key={project.id}
@@ -237,7 +237,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
               {/* Action Buttons */}
               <div className="pt-2 flex flex-wrap gap-3">
-                {project.videoUrl && !project.videoUrl.includes('youtube.com') && !project.videoUrl.includes('youtu.be') && (
+                {project.videoUrl && !project.videoUrl.includes('youtube.com') && !project.videoUrl.includes('youtu.be') && !project.videoUrl.includes('instagram.com') && (
                   <a
                     href={project.videoUrl}
                     download
