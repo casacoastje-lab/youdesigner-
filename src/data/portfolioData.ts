@@ -89,9 +89,11 @@ export const INITIAL_PROJECTS: PortfolioProject[] = [
     date: "18 Jul 2026",
     tagline: "Futuristic visual identity system and monogram branding.",
     description: "Visual identity design for NOVA featuring geometric vector branding, digital guidelines, and stationery.",
-    coverImage: "/projects/banner_novagym.png",
+    coverImage: "/projects/banner_novagym.jpg",
+    pdfUrl: "/projects/nova_brand_identity.pdf",
+    pdfFileName: "NOVA BRAND IDENTITY.pdf",
     gallery: [
-      "/projects/banner_novagym.png"
+      "/projects/banner_novagym.jpg"
     ],
     colorPalette: [],
     typography: [],
