@@ -253,12 +253,10 @@ export const INITIAL_PROJECTS: PortfolioProject[] = [
     date: "20 Sep 2024",
     tagline: "Digital connection brand identity with interconnected geometric nodes.",
     description: "Modern brand identity designed for ILYNK featuring clean geometric node graphics and tech branding.",
-    coverImage: "/projects/banner_novagym.png",
+    coverImage: "",
     pdfUrl: "/projects/visual_identity_ilynk.pdf",
     pdfFileName: "visual identity ILYNK.pdf",
-    gallery: [
-      "/projects/banner_novagym.png"
-    ],
+    gallery: [],
     colorPalette: [],
     typography: [],
     deliverablesCount: 1,
