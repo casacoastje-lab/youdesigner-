@@ -224,6 +224,8 @@ export const INITIAL_PROJECTS: PortfolioProject[] = [
     tagline: "Technology incubator visual identity & event promotion systems.",
     description: "Visual identity and digital promotional branding created for Cité de l'Innovation Souss-Massa.",
     coverImage: "/projects/banner_citedelinnovation.png",
+    pdfUrl: "/projects/citedelinnovation.pdf",
+    pdfFileName: "Cité de l'Innovation Branding.pdf",
     gallery: [
       "/projects/banner_citedelinnovation.png"
     ],
