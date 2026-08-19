@@ -35,7 +35,7 @@ export const INITIAL_PROJECTS: PortfolioProject[] = [
     tagline: "Cinematic narrative editing, kinetic typography & sound design.",
     description: "Post-production video editing for Epis 4 featuring multi-cam pacing, color grading, and spatial sound design.",
     coverImage: "/projects/thumbs/epis_4_poster.jpg",
-    videoUrl: "/projects/samar_coffee_commercial.mp4",
+    videoUrl: "https://www.youtube.com/embed/DnyI6Ik7InY?si=LdSW5sSoBnwlPv-A",
     gallery: [
       "/projects/thumbs/epis_4_poster.jpg",
       "/projects/banner_younesoudesigner.png"

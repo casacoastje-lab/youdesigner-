@@ -97,19 +97,33 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             {/* Main Media Stage: Actual Local Project Video with preload="metadata" */}
             <div className="rounded-2xl overflow-hidden bg-black border border-[#27272a] shadow-xl relative group">
               {project.videoUrl ? (
-                <div className="relative aspect-video bg-black flex items-center justify-center">
-                  <video
-                    key={project.id}
-                    src={project.videoUrl}
-                    poster={project.coverImage}
-                    controls
-                    preload="metadata"
-                    playsInline
-                    className="w-full h-full object-contain"
-                  >
-                    Your browser does not support HTML5 video.
-                  </video>
-                </div>
+                project.videoUrl.includes('youtube.com') || project.videoUrl.includes('youtu.be') ? (
+                  <div className="relative aspect-video bg-black flex items-center justify-center">
+                    <iframe
+                      key={project.id}
+                      src={project.videoUrl}
+                      title={project.title}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : (
+                  <div className="relative aspect-video bg-black flex items-center justify-center">
+                    <video
+                      key={project.id}
+                      src={project.videoUrl}
+                      poster={project.coverImage}
+                      controls
+                      preload="metadata"
+                      playsInline
+                      className="w-full h-full object-contain"
+                    >
+                      Your browser does not support HTML5 video.
+                    </video>
+                  </div>
+                )
               ) : (
                 /* Image / Presentation Banner Stage */
                 <div className="relative bg-[#0d0d10] flex flex-col items-center justify-center min-h-[320px] max-h-[65vh] overflow-hidden">
@@ -223,7 +237,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
               {/* Action Buttons */}
               <div className="pt-2 flex flex-wrap gap-3">
-                {project.videoUrl && (
+                {project.videoUrl && !project.videoUrl.includes('youtube.com') && !project.videoUrl.includes('youtu.be') && (
                   <a
                     href={project.videoUrl}
                     download
