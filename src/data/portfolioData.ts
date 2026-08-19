@@ -277,11 +277,11 @@ export const INITIAL_PROJECTS: PortfolioProject[] = [
     date: "14 Jun 2024",
     tagline: "Creative studio portfolio deck and custom typography identity.",
     description: "Visual identity and pitch presentation deck created for YOD.",
-    coverImage: "/projects/banner_ulo.png",
+    coverImage: "/projects/banner_younesoudesigner.png",
     pdfUrl: "/projects/presentation_yod.pdf",
-    pdfFileName: "presentation YOD.pdf",
+    pdfFileName: "YODproject.pdf",
     gallery: [
-      "/projects/banner_ulo.png"
+      "/projects/banner_younesoudesigner.png"
     ],
     colorPalette: [],
     typography: [],
