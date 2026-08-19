@@ -124,8 +124,24 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                     </video>
                   </div>
                 )
+              ) : project.pdfUrl ? (
+                /* PDF Presentation Stage */
+                <div className="relative bg-[#0d0d10] flex flex-col items-center justify-center min-h-[320px] max-h-[65vh] overflow-hidden">
+                  <iframe
+                    src={project.pdfUrl}
+                    title={project.title}
+                    className="w-full min-h-[500px] max-h-[60vh]"
+                  />
+                  <button
+                    onClick={() => setIsFullscreenImage(true)}
+                    className="absolute top-4 right-4 p-2.5 rounded-xl bg-black/75 hover:bg-[#ff5500] text-white backdrop-blur-md border border-white/10 transition-all flex items-center gap-2 text-xs font-bold shadow-lg cursor-pointer opacity-90 group-hover:opacity-100"
+                  >
+                    <Maximize2 className="w-4 h-4" />
+                    <span>View Fullscreen</span>
+                  </button>
+                </div>
               ) : (
-                /* Image / Presentation Banner Stage */
+                /* Image Banner Stage */
                 <div className="relative bg-[#0d0d10] flex flex-col items-center justify-center min-h-[320px] max-h-[65vh] overflow-hidden">
                   <img
                     src={project.coverImage}
@@ -135,7 +151,6 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                     onClick={() => setIsFullscreenImage(true)}
                   />
 
-                  {/* Expand Image overlay button */}
                   <button
                     onClick={() => setIsFullscreenImage(true)}
                     className="absolute top-4 right-4 p-2.5 rounded-xl bg-black/75 hover:bg-[#ff5500] text-white backdrop-blur-md border border-white/10 transition-all flex items-center gap-2 text-xs font-bold shadow-lg cursor-pointer opacity-90 group-hover:opacity-100"
@@ -146,34 +161,6 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 </div>
               )}
             </div>
-
-            {/* If project has a PDF deck, show presentation banner download box */}
-            {project.pdfUrl && (
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#181820] border border-[#ff5500]/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-xl bg-[#ff5500]/15 text-[#ff5500]">
-                    <FileText className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-sm sm:text-base">
-                      {project.pdfFileName || `${project.title} Presentation Deck`}
-                    </h4>
-                    <p className="text-zinc-400 text-xs mt-0.5">
-                      Full high-resolution branding & presentation deck
-                    </p>
-                  </div>
-                </div>
-
-                <a
-                  href={project.pdfUrl}
-                  download
-                  className="px-5 py-2.5 rounded-xl bg-[#ff5500] hover:bg-[#ff6600] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer shrink-0"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>Download Presentation PDF</span>
-                </a>
-              </div>
-            )}
 
             {/* Essential Project Information */}
             <div className="bg-[#15151a] border border-[#27272a] rounded-2xl p-6 space-y-4">
@@ -254,7 +241,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                     className="px-5 py-2.5 rounded-xl bg-[#1d1d24] hover:bg-[#252530] text-zinc-200 hover:text-white border border-[#27272a] text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer"
                   >
                     <Maximize2 className="w-4 h-4 text-[#ff5500]" />
-                    <span>View Image in Fullscreen</span>
+                    <span>{project.pdfUrl ? 'View Presentation Fullscreen' : 'View Image in Fullscreen'}</span>
                   </button>
                 )}
               </div>
@@ -282,13 +269,22 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               </button>
             </div>
 
-            <img
-              src={project.coverImage}
-              alt={project.title}
-              referrerPolicy="no-referrer"
-              className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl border border-zinc-800"
-              onClick={(e) => e.stopPropagation()}
-            />
+            {project.pdfUrl ? (
+              <iframe
+                src={project.pdfUrl}
+                title={project.title}
+                className="w-full max-w-5xl h-[85vh] rounded-xl shadow-2xl border border-zinc-800"
+                onClick={(e) => e.stopPropagation()}
+              />
+            ) : (
+              <img
+                src={project.coverImage}
+                alt={project.title}
+                referrerPolicy="no-referrer"
+                className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl border border-zinc-800"
+                onClick={(e) => e.stopPropagation()}
+              />
+            )}
 
             <div className="mt-4 text-center">
               <h3 className="text-white font-bold text-lg">{project.title}</h3>
