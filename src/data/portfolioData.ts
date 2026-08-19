@@ -63,7 +63,7 @@ export const INITIAL_PROJECTS: PortfolioProject[] = [
     tagline: "Commercial video editing with macro shots & sound design.",
     description: "Promotional commercial video campaign crafted for Samar Coffee emphasizing artisanal roasting atmosphere.",
     coverImage: "/projects/thumbs/samar_coffee_poster.jpg",
-    videoUrl: "https://www.instagram.com/reel/C4Q0qTcugV7/embed/",
+    videoUrl: "https://www.instagram.com/reel/C4YoXcnuAbQ/embed/",
     gallery: [
       "/projects/thumbs/samar_coffee_poster.jpg"
     ],
@@ -76,7 +76,7 @@ export const INITIAL_PROJECTS: PortfolioProject[] = [
     solution: "",
     impactMetrics: [],
     deliverables: [
-      { id: "del-1", name: "Samar Coffee Commercial Video", type: "raster", fileFormat: "MP4 (1080p)", size: "47 MB", downloadUrl: "https://www.instagram.com/reel/C4Q0qTcugV7/" }
+      { id: "del-1", name: "Samar Coffee Commercial Video", type: "raster", fileFormat: "MP4 (1080p)", size: "47 MB", downloadUrl: "https://www.instagram.com/reel/C4YoXcnuAbQ/" }
     ],
     tags: ["Commercial", "Video Editing", "Sound Design"]
   },
