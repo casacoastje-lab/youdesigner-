@@ -64,8 +64,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="group flex items-center gap-3 text-left"
           >
             {/* Geometric Orange & Obsidian Logo Emblem */}
-            <div className="relative w-10 h-10 rounded-xl bg-[#ff5500] flex items-center justify-center font-display font-extrabold text-white text-lg shadow-lg shadow-[#ff5500]/30 transition-transform group-hover:scale-105">
-              <span className="tracking-tighter">YO</span>
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-[#ff5500]/30 transition-transform group-hover:scale-105">
+              <img src="/logo.png" alt="YO Logo" className="w-full h-full object-cover" />
               <div className="absolute -inset-0.5 rounded-xl bg-[#ff5500] opacity-30 blur-sm -z-10 group-hover:opacity-60 transition-opacity"></div>
             </div>
             
