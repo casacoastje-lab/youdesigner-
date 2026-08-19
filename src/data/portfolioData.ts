@@ -115,9 +115,11 @@ export const INITIAL_PROJECTS: PortfolioProject[] = [
     date: "18 Jul 2026",
     tagline: "Artisan bakery and pastry logo design & packaging presentation.",
     description: "Visual identity and logo design presentation crafted for Mini Sweet bakery.",
-    coverImage: "/projects/banner_younesoudesigner.png",
+    coverImage: "/projects/banner_mini_sweet.png",
+    pdfUrl: "/projects/mini_sweet_presentation.pdf",
+    pdfFileName: "MINI SWEET LOGO PRESENTATION.pdf",
     gallery: [
-      "/projects/banner_younesoudesigner.png"
+      "/projects/banner_mini_sweet.png"
     ],
     colorPalette: [],
     typography: [],
